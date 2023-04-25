@@ -1,489 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>CSS User Profile Card</title>
-	<!-- <link rel="stylesheet" href="styles.css"> -->
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-
-
-<style>
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: 'Josefin Sans', sans-serif;
-  
-}
-body, html {
-  height: 100%;
-}
-
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-/* @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-} */
-
-body{
-   background-image: url(https://www.havertys.com/content/dam/assets/store-fronts/Frisco.jpg);
-   background-size: cover;
-   background-position: center top;
-   background-repeat: no-repeat;
-   display:flex;
-   background-attachment: fixed;
-  
-}
-
-.wrapper{
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 650px;
-  display: flex;
-  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
-}
-
-.wrapper .left{
-  width: 35%;
-  background: linear-gradient(to right,rgb(22, 22, 197),rgb(22, 22, 197));
-  padding: 30px 25px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  text-align: center;
-  /* this turns all letters in my bio white */
-  color: #fff;
-}
-
-.wrapper .left img{
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.wrapper .left h4{
-  margin-bottom: 10px;
-}
-
-.wrapper .left p{
-  font-size: 12px;
-}
-
-.wrapper .right{
-  width: 65%;
-  /* this thurns the card background white.. right side */
-  background: #fff;
-  padding: 30px 25px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.wrapper .right .info,
-.wrapper .right .projects{
-  margin-bottom: 25px;
-}
-
-.wrapper .right .info h3,
-.wrapper .right .projects h3{
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    /* border-bottom: 1px solid #e0e0e0; */
-    /* color: #353c4e; */
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-
-.wrapper .right .info_data,
-.wrapper .right .projects_data{
-  display: flex;
-  justify-content: space-between;
-}
-
-.wrapper .right .info_data .data,
-.wrapper .right .projects_data .data{
-  width: 45%;
-}
-
-.wrapper .right .info_data .data h4,
-.wrapper .right .projects_data .data h4{
-    color: #353c4e;
-    margin-bottom: 5px;
-}
-
-.wrapper .right .info_data .data p,
-.wrapper .right .projects_data .data p{
-  font-size: 13px;
-  margin-bottom: 10px;
-  /* thurns letters gray ie phone number */
-  /* color: #919aa3; */
-}
-
-.wrapper .right .info_data .data p,
-.wrapper .right .projects_data .data p{
-  font-size: 13px;
-  margin-bottom: 10px;
-  /* thurns letters gray ie phone number */
-  color: #919aa3;
-  line-height: 1.5; /* Add this line */
-}
-
-
-
-.wrapper .social_media ul{
-  display: flex;
-}
-
-
-/* Social Media icons */
-.wrapper .social_media ul li{
-  width: 45px;
-  height: 45px;
-  /* social media backgrounds */
-  background: linear-gradient(to right,rgb(22, 22, 197),rgb(22, 22, 197));
-  margin-right: 10px;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 45px;
-}
-
-.wrapper .social_media ul li a{
-    /* social mida icons white */
-  color :#fff;
-  display: block;
-  font-size: 18px;
-}
-
-.left{
-    background-color: rgb(22, 22, 197) !important;
-}
-
-#go{
-  
-  position: absolute;
-  left: 0%;
-  /* top: 15%; */
-  
-}
-
-
-
-/* carousel code */
-
-.carousel {
-  position: absolute;
-  left: 0%;
-  top: 135%;
-  /* width: 680px; */
-  /* height: 800px; */
-  max-width: 100%;
-  max-height: fit-content;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.carousel-slides {
-  display: flex;
-  width: 100%;
-  /* height: 50%; */
-  transition: transform 0.5s;
-}
-
-.carousel-slide {
-  flex: 0 0 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 50%;
-  overflow-x: hidden;
-}
-
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 18px;
-}
-
-.carousel-control.prev {
-  left: 10px;
-}
-
-.carousel-control.next {
-  right: 10px;
-}
-
-
-
-@media screen and (max-width: 800px) {
-
-  body{
-    
-  height: 100%;
-  width: 100%;
-  display: flex;
-   flex-direction: row;
-  /* align-items: center; */
-  /* justify-content: center;  */
-  /* background-image: none;
-  background-color: #fff; */
-
-
-  }
-
-.wrapper {
-  flex-direction: row;
-  width: 100%;
-}
-
-.left, .right {
-  width: 100%;
-  border-radius: 0;
-}
-
-.carousel {
-  top: 170%;
-}
-
-.carousel-slide img {
-  height: 100%;
-}
-
-.carousel-control {
-  font-size: 14px;
-}
-
-.social_media ul li {
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-}
-
-.social_media ul li a {
-  font-size: 14px;
-}
-
-.sidebar {
-  padding-top: 50px;
-  width: 50%;
-}
-
-.sidebar a {
-  font-size: 20px;
-}
-
-}
-
-
-@media only screen and (max-width: 800px)  {
-  .sidebar a {
-    font-size: 60px;
-    color: blue;
-    
-  }
-}
-
-@media only screen and (max-width: 800px)  {
-  .openbtn {
-    font-size: 100px;
-    /* background-color: aqua; */
-  }
-}
-
-
-
-
-</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link href="carousel.css" rel="stylesheet">
 </head>
 <body>
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+  
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Havertys.com</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+ 
+    
+  
+
+
+
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+ 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://calendar.syracuse.edu/wp-content/uploads/avengers-endgame-poster.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://www.deccanherald.com/sites/dh/files/article_images/2019/05/05/file757shydjfptrbs8yhil-1557079206.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://nofilmschool.com/sites/default/files/styles/structured_16x9/public/avengers_endgame_script_download.jpg?itok=T1biV8mI" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
   
-  <div id="main">
-    <button class="openbtn" onclick="openNav()">☰ </button>  
-    
+
+</nav>
+
+
+
+
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <h2>Heading</h2>
+      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
    
+  </div><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
   </div>
 
-<div class="wrapper">
-    <div class="left">
-        <img src="pictures\Screenshot_20230409_152827_Messages (1).jpg" 
-        alt="user" width="100">
-        <h4>one more time again</h4>
+  <hr class="featurette-divider">
 
-    
-         <p>Assistant Branch Manager</p>
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
     </div>
-    <div class="right">
-        <div class="info">
-            <h3>Information</h3>
-            <div class="info_data">
-                 <div class="data">
-                    <h4>Email</h4>
-                    <p>jagroover@havertys.com</p>
-                 </div>
-                 <div class="data">
-                   <h4>phone number</h4>
-                    <p>912.531.6082</p>
-              </div>
-            </div>
-        </div>
-      
-      <div class="projects">
-            <h3>Projects</h3>
-            <div class="projects_data">
-                 <div class="data">
-                    <h4>Recent</h4>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                 </div>
-                 <div class="data">
-                   <!-- <h4>Most Viewed</h4>
-                    <p>dolor sit amet.</p> -->
-              </div>
-            </div>
-        </div>
-      
-        <div class="social_media">
-            <ul>
-              <li><a href="https://www.havertys.com/" target="_blank">H</i></a></li>
-              <li><a href="https://www.guardsman.com/"target="_blank">G</i></a></li>
-              <!-- <li><a href="#"><i class="fab fa-messager"target="_blank"></i></a></li> -->
-          </ul>
-      </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
     </div>
+  </div>
 
+  <hr class="featurette-divider">
 
-    <div class="carousel">
-      <div class="carousel-slides">
-        <div class="carousel-slide">
-          <img src="https://i.etsystatic.com/27271066/r/il/ec1015/4321193948/il_340x270.4321193948_kba1.jpg" alt="Image 3">
-          <p>Slide 1 description</p>
-        </div>
-        <div class="carousel-slide">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaC9doh92Wim83Vk65hSGtNKXPf5LIpOrLcQ&usqp=CAU" alt="Image 2">
-          <p>Slide 2 description</p>
-        </div>
-        <div class="carousel-slide">
-          <img src="https://i.pinimg.com/originals/3c/af/99/3caf998ff1a42735b5feb0f672db26d8.jpg" alt="Image 3">
-          <p>Slide 3 description</p>
-        </div>
-      </div>
-      <button class="carousel-control prev">Previous</button>
-      <button class="carousel-control next">Next</button>
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
     </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
 
 
-</div>
+<!-- FOOTER -->
+<footer class="container">
+  <p class="float-right"><a href="#">Back to top</a></p>
+  <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+</main>
 
-<!-- carousel code -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-<script>
-    const carousel = document.querySelector('.carousel');
-    const slidesContainer = carousel.querySelector('.carousel-slides');
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const prevButton = carousel.querySelector('.carousel-control.prev');
-    const nextButton = carousel.querySelector('.carousel-control.next');
-
-    let currentSlide = 0;
-
-    function updateSlidePosition() {
-      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    prevButton.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      updateSlidePosition();
-    });
-
-    nextButton.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateSlidePosition();
-    });
-
-
-
-    function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-  </script>
 
 </body>
 </html>
