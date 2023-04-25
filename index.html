@@ -22,6 +22,64 @@ body, html {
   height: 100%;
 }
 
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
 body{
    background-image: url(https://www.havertys.com/content/dam/assets/store-fronts/Frisco.jpg);
    background-size: cover;
@@ -158,14 +216,86 @@ body{
   
   position: absolute;
   left: 0%;
-  top: 135%;
+  /* top: 15%; */
   
+}
+
+
+
+/* carousel code */
+
+.carousel {
+  position: absolute;
+  left: 0%;
+  top: 135%;
+  /* width: 680px; */
+  /* height: 800px; */
+  max-width: 100%;
+  max-height: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  width: 100%;
+  /* height: 50%; */
+  transition: transform 0.5s;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 50%;
+  overflow-x: hidden;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
 }
 
 </style>
 </head>
-
-
+<body>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+  
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ </button>  
+    
+   
+  </div>
 
 <div class="wrapper">
     <div class="left">
@@ -212,14 +342,68 @@ body{
               <!-- <li><a href="#"><i class="fab fa-messager"target="_blank"></i></a></li> -->
           </ul>
       </div>
-      <!-- <iframe id="go" width="650" height="300" src="https://www.youtube.com/embed/TcMBFSGVi1c" title="Marvel Studios&#39; Avengers: Endgame - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-      <iframe id="go" width="650" height="300" src="https://www.youtube.com/embed/majxRFArAVQ" title="Take a Closer Look at the Havertys Blue Ridge Table" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+
+    <div class="carousel">
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <img src="https://i.etsystatic.com/27271066/r/il/ec1015/4321193948/il_340x270.4321193948_kba1.jpg" alt="Image 3">
+          <p>Slide 1 description</p>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaC9doh92Wim83Vk65hSGtNKXPf5LIpOrLcQ&usqp=CAU" alt="Image 2">
+          <p>Slide 2 description</p>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://i.pinimg.com/originals/3c/af/99/3caf998ff1a42735b5feb0f672db26d8.jpg" alt="Image 3">
+          <p>Slide 3 description</p>
+        </div>
+      </div>
+      <button class="carousel-control prev">Previous</button>
+      <button class="carousel-control next">Next</button>
     </div>
 
 
 </div>
 
+<!-- carousel code -->
 
+<script>
+    const carousel = document.querySelector('.carousel');
+    const slidesContainer = carousel.querySelector('.carousel-slides');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const prevButton = carousel.querySelector('.carousel-control.prev');
+    const nextButton = carousel.querySelector('.carousel-control.next');
+
+    let currentSlide = 0;
+
+    function updateSlidePosition() {
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlidePosition();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlidePosition();
+    });
+
+
+
+    function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+  </script>
 
 </body>
 </html>
