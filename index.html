@@ -78,11 +78,11 @@
 <br>
 <br>
 <br> -->
-<hr class="featurette-divider">
+<!-- <hr class="featurette-divider"> -->
 
 <div class="container marketing">
 
-
+  <hr class="featurette-divider">
 
 
 
@@ -98,7 +98,29 @@
       <h3>James Groover</h3>
       <p>Sales Consultant</p>
       <p>Phone: 912.531.6082</p> <p> Email: Jagroover@havertys.com</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+
+
+      <!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1nwMh_chvTmiWzTKmNHXxTq0xpAO2QjFaM1WsW8CzOzydppk_uUHZ8jiE4bPrnmq-qmpWgZ6eF?gv=true',
+      color: '#33B679',
+      label: 'Book an appointment',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+
+
+
+      <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
     </div><!-- /.col-lg-4 -->
    
   </div><!-- /.row -->
@@ -157,7 +179,7 @@
 
   <!-- /END THE FEATURETTES -->
 
-</div><!-- /.container -->
+<!-- </div>/.container -->
 
 
 
