@@ -9,7 +9,20 @@
   h1,h2,h3,h4, h5,p{
     color: aliceblue;
   }
+
+
+  .move{
+    position: relative;
+  margin-left: 50%;
   
+  }
+  
+  @media (min-width: 400px) {
+    /* Bump up size of carousel content */
+    .move{
+      margin-left:61% ;
+    }
+  }
 
   
   /* MARKETING CONTENT
