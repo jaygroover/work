@@ -27,8 +27,27 @@
       </ul>
     </div>
  
+
+    <!-- Modal -->
+    <h2>Memorial Day Sale Event!!</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Click for Savings</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <img src="pictures/Screenshot 2023-05-01 at 8.47.44 PM.png" alt="Trulli" style="width:100%; height:200px; object-fit: contain; object-position: center;">
+    <!-- <p id="black">Some text in the Modal..</p> -->
+  </div>
+
+</div>
     
-  
+  <!-- Modal ends -->
   </nav>
 
 
@@ -120,12 +139,16 @@
     });
   });
 })();
+
+
+
+
 </script>
 <!-- end Google Calendar Appointment Scheduling -->
 
 
 
-      <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+     
     </div><!-- /.col-lg-4 -->
    
   </div><!-- /.row -->
@@ -139,9 +162,12 @@
 
 
 
-  <!-- START THE FEATURETTES -->
-
+  
+<!-- line diver -->
   <hr class="featurette-divider">
+
+
+
 
   <div class="row featurette">
     <div class="col-md-7">
@@ -151,43 +177,19 @@
     </div>
 
 
+
+    <!-- google mapes -->
     <div class="col-md-5">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1691.7031029579268!2d-81.12480986032715!3d32.004108702809255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fb750127637c3d%3A0x11a18bac7b3e817e!2s7923%20Abercorn%20St%2C%20Savannah%2C%20GA%2031406!5e0!3m2!1sen!2sus!4v1682554421740!5m2!1sen!2sus" style="width:100%; height:400px; object-fit: contain; object-position: center;"></iframe>
     </div>
   </div>
 
+
+
+
+
+<!-- line divider -->
   <hr class="featurette-divider">
-
-  <!-- <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-    </div>
-  </div> -->
-
-  <!-- <hr class="featurette-divider"> -->
-
-  <!-- /END THE FEATURETTES -->
-
-<!-- </div>/.container -->
-
-
-
 
 
 
@@ -200,6 +202,38 @@
   <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 </main>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
