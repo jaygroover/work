@@ -78,6 +78,47 @@ Left column */
     padding: 0;
   }
 }
+
+
+
+
+
+
+blockquote {
+    font-family: Georgia, serif;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+}
+/* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+blockquote:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 6em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+   /* display: block; don't use this, it raised the quote too high from the bottom - defeated line-height? */
+    float:right;
+    font-size:6em;
+    line-height: 1;
+    right:0;
+    bottom:-0.5em;
+    content: "\201D";
+}
+blockquote footer {
+    padding: 0 2em 0 0;
+    text-align:right;
+}
+blockquote cite:before {
+    content: "\2013";
+}
+
 </style>
 </head>
 <body>
@@ -101,6 +142,20 @@ Left column */
     </p>
       <p>MDF and wood veneered furniture exudes a sense of elegance and sophistication. The medium-density fiberboard used to construct the furniture is durable and long-lasting, ensuring that your investment will stand the test of time. The real wood veneers on the surface of the furniture give it a natural and organic feel, which is hard to replicate with other materials. With a variety of finishes available, from dark and dramatic to light and airy, MDF and wood veneer furniture can suit any style and taste.
     </p>
+    <div>
+      <blockquote>
+        When it comes to choosing between MDF and wood veneer furniture or particle and laminate furniture, it's important to consider the long-term value of your investment. While particle and laminate furniture may be a more affordable option initially, they may need to be replaced sooner, costing you more money in the long term.
+      <footer>
+          <cite>
+              <!-- Teddy Roosevelt -->
+          </cite>
+      </footer>
+      </blockquote>
+  </div>
+  
+
+
+
       <p>On the other hand, particle and laminate furniture is perfect for those who are looking for an affordable and functional option. While they may not have the same aesthetic appeal as MDF and wood veneer furniture, they are often made with practicality in mind. For example, particle and laminate furniture are easier to clean, which makes them perfect for busy households or offices with high traffic.
     </p>
       <p>When it comes to choosing between MDF and wood veneer furniture or particle and laminate furniture, it's important to consider the long-term value of your investment. While particle and laminate furniture may be a more affordable option initially, they may need to be replaced sooner, costing you more money in the long term than MDF and wood veneer furniture due to wear and tear. MDF and wood veneer furniture, on the other hand, is built to last, making them a more cost-effective choice in the long run.
