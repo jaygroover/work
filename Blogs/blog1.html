@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+
+<!-- title -->
+<img src="data:image/png;base64,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" style="width:100%; height:200px; object-fit:contain; object-position: center;">
+  
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <!-- <h2>TITLE HEADING</h2> -->
+      <h5>Knowing the best wood to buy!, 5/1/2023</h5>
+      <img src="https://www.skirting4u.co.uk/img/cms/Blog/HDF%20vs%20MDF/HDF1.jpg" maxwid height="350" vh="100%" xmlns="https://i.redd.it/t53ekln9nx041.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+      <!-- <p>Some text..</p> -->
+      <p>Furniture is not just a functional aspect of our homes and offices but also an expression of our personal style and taste. From minimalist to rustic, modern to classic, the type of furniture we choose can make a significant impact on the overall look and feel of a space.
+    </p>
+      <p>MDF and wood veneered furniture exudes a sense of elegance and sophistication. The medium-density fiberboard used to construct the furniture is durable and long-lasting, ensuring that your investment will stand the test of time. The real wood veneers on the surface of the furniture give it a natural and organic feel, which is hard to replicate with other materials. With a variety of finishes available, from dark and dramatic to light and airy, MDF and wood veneer furniture can suit any style and taste.
+    </p>
+      <p>On the other hand, particle and laminate furniture is perfect for those who are looking for an affordable and functional option. While they may not have the same aesthetic appeal as MDF and wood veneer furniture, they are often made with practicality in mind. For example, particle and laminate furniture are easier to clean, which makes them perfect for busy households or offices with high traffic.
+    </p>
+      <p>When it comes to choosing between MDF and wood veneer furniture or particle and laminate furniture, it's important to consider the long-term value of your investment. While particle and laminate furniture may be a more affordable option initially, they may need to be replaced sooner, costing you more money in the long term than MDF and wood veneer furniture due to wear and tear. MDF and wood veneer furniture, on the other hand, is built to last, making them a more cost-effective choice in the long run.
+    </p>
+      <p>The type of furniture you choose depends on your personal style, needs, and budget. Whether you opt for the elegance of MDF and wood veneers or the practicality of particle and laminate, it's important to choose furniture that will not only enhance the aesthetics of your space but also stand the test of time.
+    </p>
+    </div>
+    <!-- <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <img src="https://www.skirting4u.co.uk/img/cms/Blog/HDF%20vs%20MDF/HDF1.jpg" width="300" height="350" vh="100%" xmlns="https://i.redd.it/t53ekln9nx041.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div> -->
+
+</body>
+</html>
