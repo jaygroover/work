@@ -1,244 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
 
+body{
+background-color:rgba(128, 128, 128, 0.821);
+background: url('https://mcmillanpazdansmith.com/wp-content/uploads/slider327/havertys_st_louis_1334.jpg'); background: url('https://mcmillanpazdansmith.com/wp-content/uploads/slider327/havertys_st_louis_1334.jpg') no-repeat center fixed; 
+background-position-x: 18%;
+}
+a:link, a:visited {
+  background-color: blue;
+  ;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  Width:100%;
+  position:fixed;
+  top:50%;
+  Right:0%;
+}
 
-  <link href="carousel.css" rel="stylesheet">
+a:hover, a:active {
+  background-color:gray;
+}
+
+h2{
+position:relitive;
+right:60%;
+}
+</style>
 </head>
 <body>
-  <!-- <div class="bg"></div>
-   -->
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="https://www.havertys.com">Havertys.com</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="https://www.havertys.com/design-services/the-havertys-difference/financing">Financing</a></li>
-        <li><a href="design.html">Design Projects</a></li>
-        <li><a href="Blog.html">Design Blog</a></li>
-        <li><a href="https://www.youtube.com/watch?v=TgQV7gSwXzc">About Havertys</a></li>
-      </ul>
-    </div>
- 
 
-    <!-- Modal -->
-    <h2>Memorial Day Sale Event!!</h2>
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Click for Savings</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-
-    <img src="pictures/Screenshot 2023-05-02 at 6.30.47 PM.png" alt="Trulli" style="width:100%; height:200px; object-fit: contain; object-position: center;">
-
-    <img src="pictures/Screenshot 2023-05-02 at 6.31.13 PM.png" alt="Trulli" style="width:100%; height:400px; object-fit: contain; object-position: bottom;">
-    <!-- <p id="black">Some text in the Modal..</p> -->
-  </div>
-
-</div>
-    
-  <!-- Modal ends -->
-  </nav>
-
-
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
- 
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img  src="https://s.yimg.com/ny/api/res/1.2/W3cwBRo4iI4CcM4rg5AaoA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD0zNjA-/https://media.zenfs.com/en/globenewswire.com/95b4d7e364d5bef30c20c170e2a9518f" alt="Chicago" style="width:100%; height:200px; object-fit: contain; object-position: center;">
-       
-      </div>
-
-      <div class="item">
-        <img src="https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/223/2017/12/13074219/BBR_-SUPK_3D.jpeg" alt="Los Angeles"style="width:100%; height:200px; object-fit:contain; object-position: top;" >
-      </div>
-    
-      <div class="item">
-        <img src="https://cdn.shopify.com/s/files/1/1068/7700/products/guardsmangoldprotectionplanmjmfurniture_1200x.jpg?v=1681784598" alt="New york" style="width:100%; height:200px; object-fit:contain; object-position: center;">
-         
-        <div class="move">
-        <a class="btn btn-info"  href="https://www.guardsman.com/consumer-products-services/submit-a-claim/" role="button">Click to file claim</a>
-      </div>
-      </div>
-      
-      
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  
-
-
-
-<!-- <br>
-<br>
-<br>
-<br> -->
-<!-- <hr class="featurette-divider"> -->
-
-<div class="container marketing">
-
-  <hr class="featurette-divider">
-
-
-
-  
- 
-  <!-- Three columns of text below the carousel -->
-  <div class="row">
-    <div class="col-lg-4" id="colorchnage">
-      
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="rounded-circle" src="pictures/Screenshot_20230409_152827_Messages (1).jpg" alt="Generic placeholder image" style="width:100%; height:200px; object-fit:contain;">
-      <h3>James Groover</h3>
-      <p>Sales Consultant</p>
-      <p>Phone: 912.531.6082</p> <p> Email: Jagroover@havertys.com</p>
-
-
-      <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-(function() {
-  var target = document.currentScript;
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1nwMh_chvTmiWzTKmNHXxTq0xpAO2QjFaM1WsW8CzOzydppk_uUHZ8jiE4bPrnmq-qmpWgZ6eF?gv=true',
-      color: '#33B679',
-      label: 'Book an appointment',
-      target,
-    });
-  });
-})();
-
-
-
-
-</script>
-<!-- end Google Calendar Appointment Scheduling -->
-
-
-
-     
-    </div><!-- /.col-lg-4 -->
-   
-  </div><!-- /.row -->
-
-
-
-
-
-
-
-
-
-
-  
-<!-- line diver -->
-  <hr class="featurette-divider">
-
-
-
-
-  <div class="row featurette">
-    <div class="col-md-7">
-
-      <h2 class="featurette-heading">Come see us at the Savannah location </h2>
-      <p class="lead">The address is 7923 Abercorn St, Savannah, Ga. 31406</p>
-    </div>
-
-
-
-    <!-- google mapes -->
-    <div class="col-md-5">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1691.7031029579268!2d-81.12480986032715!3d32.004108702809255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fb750127637c3d%3A0x11a18bac7b3e817e!2s7923%20Abercorn%20St%2C%20Savannah%2C%20GA%2031406!5e0!3m2!1sen!2sus!4v1682554421740!5m2!1sen!2sus" style="width:100%; height:400px; object-fit: contain; object-position: center;"></iframe>
-    </div>
-  </div>
-
-
-
-
-
-<!-- line divider -->
-  <hr class="featurette-divider">
-
-
-
-
-
-
-<!-- FOOTER -->
-<footer class="container">
-  <p class="float-right"><a href="#">Back to top</a></p>
-  <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
-</main>
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
+<a href="https://dot.cards/jaygroover" target="_blank">Click to Enter</a>
 
 </body>
 </html>
+
+
